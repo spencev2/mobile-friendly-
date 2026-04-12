@@ -1,5 +1,6 @@
 /* Spencer Cox */
 
+/* Base Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -87,6 +88,7 @@ body {
   margin: 0 auto 1.5rem;
 }
 
+/* Buttons */
 .btnrow {
   display: flex;
   flex-direction: column;
@@ -103,6 +105,7 @@ body {
   font-weight: bold;
   text-align: center;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -129,13 +132,72 @@ body {
   font-size: 1.25rem;
 }
 
-/* Footer */
-.footer {
+/* Footer (FIXED) */
+footer {
   margin-top: 2rem;
   text-align: center;
   padding: 1rem;
   font-size: 0.95rem;
   color: #cbd5e1;
+}
+
+/* ========================= */
+/* FORM VALIDATION STYLES */
+/* ========================= */
+
+.form-card {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error {
+  display: block;
+  min-height: 18px;
+  margin-top: 6px;
+  color: #f87171;
+  font-size: 0.85rem;
+}
+
+.input-error {
+  border: 1px solid #f87171;
+}
+
+.success-message {
+  margin-bottom: 16px;
+  color: #4ade80;
+  font-weight: bold;
+  min-height: 20px;
 }
 
 /* Tablet */
@@ -174,6 +236,21 @@ body {
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
   }
 }
 
