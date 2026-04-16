@@ -1,26 +1,27 @@
-<!-- Spencer Cox -->
-
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Author: Spencer -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ChallengeHub | Submit a Challenge</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Spencer Cox -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChallengeHub | Submit</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
+
   <header class="navbar">
     <div class="wrap">
-      <div class="brand">ChallengeHub</div>
+      <div class="brand">
+        <img src="images/challenge-hub.png" alt="ChallengeHub logo" class="logo">
+        <span>ChallengeHub</span>
+      </div>
       <nav class="navlinks">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="challenges.html">Challenges</a>
         <a href="guides.html">Guides</a>
         <a href="leaderboard.html">Leaderboard</a>
-        <a class="active" href="submitchallenge.html">Submit</a>
+        <a href="submitchallenge.html" class="active">Submit</a>
       </nav>
     </div>
   </header>
@@ -30,157 +31,55 @@
     <section class="hero">
       <h1>Submit Your Challenge Run</h1>
       <p>
-        Completed a challenge? Submit your results below and earn your spot on the leaderboard.
-        All major games are welcome.
+        Enter your challenge details below so your run can be reviewed and added to the leaderboard.
       </p>
     </section>
 
-    <section class="card form-card">
-      <h2>Challenge Submission Form</h2>
-
-      <form id="challengeForm" novalidate>
+    <section class="form-card">
+      <form>
         <div class="form-group">
-          <label for="gamerTag">Gamer Tag</label>
-          <input type="text" id="gamerTag" name="gamerTag" placeholder="Enter your gamer tag" />
-          <small class="error" id="gamerTagError"></small>
+          <label for="player-name">Player Name</label>
+          <input type="text" id="player-name" name="player-name" placeholder="Enter your gamer tag">
         </div>
 
         <div class="form-group">
-          <label for="game">Game</label>
-          <input type="text" id="game" name="game" placeholder="Fortnite, Valorant, COD, Rocket League, etc." />
-          <small class="error" id="gameError"></small>
-        </div>
-
-        <div class="form-group">
-          <label for="challengeName">Challenge Name</label>
-          <input type="text" id="challengeName" name="challengeName" placeholder="Example: No-Heal Run" />
-          <small class="error" id="challengeNameError"></small>
+          <label for="challenge-name">Challenge</label>
+          <select id="challenge-name" name="challenge-name">
+            <option>No-Heal Run</option>
+            <option>Grey Loot Only</option>
+            <option>Movement Madness</option>
+            <option>One-Spot Loot</option>
+            <option>No Reload Challenge</option>
+            <option>Sniper Only</option>
+            <option>Storm Edge Play</option>
+            <option>Minimal Inventory</option>
+          </select>
         </div>
 
         <div class="form-group">
           <label for="result">Result</label>
-          <input type="text" id="result" name="result" placeholder="Score, Placement, Time, Eliminations, etc." />
-          <small class="error" id="resultError"></small>
+          <input type="text" id="result" name="result" placeholder="Example: Top 5 + 4 Elims">
         </div>
 
         <div class="form-group">
-          <label for="proofLink">Proof Link</label>
-          <input type="url" id="proofLink" name="proofLink" placeholder="YouTube, Twitch clip, screenshot link" />
-          <small class="error" id="proofLinkError"></small>
+          <label for="proof">Proof Link</label>
+          <input type="url" id="proof" name="proof" placeholder="Paste screenshot or clip link">
         </div>
 
         <div class="form-group">
-          <label for="notes">Additional Notes (Optional)</label>
-          <textarea id="notes" name="notes" rows="4" placeholder="Describe how you completed the challenge..."></textarea>
-          <small class="error" id="notesError"></small>
+          <label for="notes">Extra Notes</label>
+          <textarea id="notes" name="notes" placeholder="Anything else about your run?"></textarea>
         </div>
 
-        <p class="success-message" id="successMessage"></p>
-
-        <button class="btn" type="submit">Submit Challenge</button>
+        <button type="submit" class="btn">Submit Run</button>
       </form>
     </section>
 
-    <footer>
-      <p>
-        Submissions are reviewed before being added to the leaderboard.
-      </p>
-    </footer>
-
   </main>
 
-  <script>
-    const form = document.getElementById("challengeForm");
-    const gamerTag = document.getElementById("gamerTag");
-    const game = document.getElementById("game");
-    const challengeName = document.getElementById("challengeName");
-    const result = document.getElementById("result");
-    const proofLink = document.getElementById("proofLink");
-    const notes = document.getElementById("notes");
-    const successMessage = document.getElementById("successMessage");
+  <footer>
+    <p>&copy; 2026 ChallengeHub. All rights reserved.</p>
+  </footer>
 
-    function showError(input, message) {
-      const errorElement = document.getElementById(input.id + "Error");
-      errorElement.textContent = message;
-      input.classList.add("input-error");
-    }
-
-    function clearError(input) {
-      const errorElement = document.getElementById(input.id + "Error");
-      errorElement.textContent = "";
-      input.classList.remove("input-error");
-    }
-
-    function isValidURL(value) {
-      try {
-        new URL(value);
-        return true;
-      } catch {
-        return false;
-      }
-    }
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      let isValid = true;
-      successMessage.textContent = "";
-
-      const gamerTagValue = gamerTag.value.trim();
-      const gameValue = game.value.trim();
-      const challengeNameValue = challengeName.value.trim();
-      const resultValue = result.value.trim();
-      const proofLinkValue = proofLink.value.trim();
-      const notesValue = notes.value.trim();
-
-      clearError(gamerTag);
-      clearError(game);
-      clearError(challengeName);
-      clearError(result);
-      clearError(proofLink);
-      clearError(notes);
-
-      if (gamerTagValue === "") {
-        showError(gamerTag, "Please enter your gamer tag.");
-        isValid = false;
-      } else if (gamerTagValue.length < 3) {
-        showError(gamerTag, "Gamer tag must be at least 3 characters.");
-        isValid = false;
-      }
-
-      if (gameValue === "") {
-        showError(game, "Please enter the game name.");
-        isValid = false;
-      }
-
-      if (challengeNameValue === "") {
-        showError(challengeName, "Please enter the challenge name.");
-        isValid = false;
-      }
-
-      if (resultValue === "") {
-        showError(result, "Please enter your result.");
-        isValid = false;
-      }
-
-      if (proofLinkValue === "") {
-        showError(proofLink, "Please enter a proof link.");
-        isValid = false;
-      } else if (!isValidURL(proofLinkValue)) {
-        showError(proofLink, "Please enter a valid URL.");
-        isValid = false;
-      }
-
-      if (notesValue.length > 250) {
-        showError(notes, "Notes must be 250 characters or less.");
-        isValid = false;
-      }
-
-      if (isValid) {
-        successMessage.textContent = "Challenge submitted successfully!";
-        form.reset();
-      }
-    });
-  </script>
 </body>
 </html>
