@@ -24,7 +24,6 @@ body {
 
 img {
   max-width: 100%;
-  height: auto;
   display: block;
 }
 
@@ -169,6 +168,7 @@ a {
   overflow: hidden;
   border: 1px solid #334155;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .card:hover {
@@ -220,6 +220,7 @@ a {
   overflow: hidden;
   border: 1px solid #334155;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .guide-card:hover {
@@ -340,13 +341,13 @@ textarea {
   margin-bottom: 0.75rem;
 }
 
-.content-section p {
+.content-section p,
+.content-section li {
   color: #cbd5e1;
 }
 
 .content-section ul {
   padding-left: 1.25rem;
-  color: #cbd5e1;
 }
 
 .content-section li {
@@ -411,6 +412,6 @@ footer {
 
   .grid,
   .guides-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
