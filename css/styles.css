@@ -1,13 +1,16 @@
 /* Spencer Cox */
 
-/* Base Reset */
+/* =========================
+   RESET / BASE
+========================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
 }
@@ -15,28 +18,44 @@ html, body {
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  background-color: #0f172a;
+  background: #0f172a;
   color: #f8fafc;
 }
 
-/* Navbar */
-.navbar {
-  background-color: #1e293b;
-  border-bottom: 1px solid #334155;
-  padding: 1rem 0;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.wrap {
-  width: 90%;
-  max-width: 1100px;
+a {
+  text-decoration: none;
+}
+
+.wrap,
+.container {
+  width: min(92%, 1100px);
   margin: 0 auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .brand {
   font-size: 1.6rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-weight: 700;
   text-align: center;
+  margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .navlinks {
@@ -46,49 +65,55 @@ body {
 }
 
 .navlinks a {
-  text-decoration: none;
+  display: block;
   color: #f8fafc;
-  background-color: #334155;
-  padding: 0.85rem 1rem;
-  border-radius: 10px;
+  background: #334155;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
   text-align: center;
   font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: 0.25s ease;
 }
 
 .navlinks a:hover,
 .navlinks a.active {
-  background-color: #3b82f6;
+  background: #3b82f6;
   transform: translateY(-2px);
 }
 
-/* Main Content */
+/* =========================
+   MAIN SECTIONS
+========================= */
 .container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 2rem auto;
+  padding: 2rem 0 3rem;
 }
 
 .hero {
-  background-color: #1e293b;
+  background: linear-gradient(145deg, #1e293b, #172033);
   padding: 2rem 1.25rem;
-  border-radius: 16px;
+  border-radius: 18px;
   margin-bottom: 2rem;
   text-align: center;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .hero h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.2;
 }
 
 .hero p {
   font-size: 1rem;
   max-width: 700px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
+  color: #cbd5e1;
 }
 
-/* Buttons */
+/* =========================
+   BUTTONS
+========================= */
 .btnrow {
   display: flex;
   flex-direction: column;
@@ -97,54 +122,130 @@ body {
 
 .btn {
   display: inline-block;
-  text-decoration: none;
-  background-color: #2563eb;
-  color: white;
-  padding: 0.9rem 1rem;
-  border-radius: 10px;
-  font-weight: bold;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0.95rem 1.15rem;
+  border-radius: 12px;
+  font-weight: 700;
   text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: 0.25s ease;
   cursor: pointer;
+  border: none;
 }
 
 .btn:hover {
-  background-color: #1d4ed8;
+  background: #1d4ed8;
   transform: translateY(-2px);
 }
 
-/* Cards */
+/* =========================
+   GRID / CARDS
+========================= */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .card {
-  background-color: #1e293b;
-  padding: 1.5rem;
-  border-radius: 16px;
+  background: #1e293b;
   border: 1px solid #334155;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card h2 {
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.card-content {
+  padding: 1.25rem;
+}
+
+.card h2,
+.card h3 {
   margin-bottom: 0.75rem;
   font-size: 1.25rem;
+  color: #ffffff;
 }
 
-/* Footer (FIXED) */
-footer {
-  margin-top: 2rem;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.95rem;
+.card p {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   GUIDES PAGE SPECIFIC
+========================= */
+.guides-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.guide-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.guide-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.guide-content {
+  padding: 1.25rem;
+}
+
+.guide-content h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.guide-content p {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.guide-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.guide-tag {
+  background: #334155;
+  color: #e2e8f0;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.guides-intro {
+  margin-bottom: 1.5rem;
+}
+
+.guides-intro p {
   color: #cbd5e1;
 }
 
-/* ========================= */
-/* FORM VALIDATION STYLES */
-/* ========================= */
-
+/* =========================
+   FORM VALIDATION
+========================= */
 .form-card {
   margin-top: 20px;
 }
@@ -165,7 +266,7 @@ textarea {
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #475569;
-  background-color: #0f172a;
+  background: #0f172a;
   color: #f8fafc;
   font-size: 1rem;
 }
@@ -200,18 +301,31 @@ textarea {
   min-height: 20px;
 }
 
-/* Tablet */
-@media (min-width: 768px) {
-  .brand {
-    text-align: left;
-    margin-bottom: 0;
-  }
+/* =========================
+   FOOTER
+========================= */
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
 
+/* =========================
+   TABLET
+========================= */
+@media (min-width: 768px) {
   .wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+  }
+
+  .brand {
+    text-align: left;
+    margin-bottom: 0;
   }
 
   .navlinks {
@@ -224,6 +338,10 @@ textarea {
     padding: 0.75rem 1rem;
   }
 
+  .hero {
+    padding: 2.5rem 2rem;
+  }
+
   .hero h1 {
     font-size: 2.5rem;
   }
@@ -234,15 +352,18 @@ textarea {
     flex-wrap: wrap;
   }
 
-  .grid {
+  .grid,
+  .guides-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile tweaks */
+/* =========================
+   MOBILE TWEAKS
+========================= */
 @media (max-width: 600px) {
   .hero h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .hero p {
@@ -252,9 +373,19 @@ textarea {
   .btn {
     font-size: 0.95rem;
   }
+
+  .guide-img {
+    height: 200px;
+  }
+
+  .guide-content {
+    padding: 1rem;
+  }
 }
 
-/* Desktop */
+/* =========================
+   DESKTOP
+========================= */
 @media (min-width: 1024px) {
   .hero {
     padding: 3rem 2rem;
@@ -266,5 +397,9 @@ textarea {
 
   .hero p {
     font-size: 1.1rem;
+  }
+
+  .guides-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
