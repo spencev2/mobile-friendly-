@@ -169,6 +169,8 @@ a {
   border: 1px solid #334155;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -180,16 +182,21 @@ a {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  object-position: center;
 }
 
 .card-content {
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
 }
 
 .card-content h2,
 .card-content h3 {
-  margin-bottom: 0.75rem;
   color: #ffffff;
+  line-height: 1.2;
 }
 
 .card-content p {
@@ -221,6 +228,8 @@ a {
   border: 1px solid #334155;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .guide-card:hover {
@@ -232,26 +241,32 @@ a {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  object-position: center;
 }
 
 .guide-content {
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
 }
 
 .guide-content h2 {
-  margin-bottom: 0.6rem;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
 .guide-content p {
   color: #cbd5e1;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .guide-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .guide-tag {
@@ -378,6 +393,7 @@ footer {
   .brand {
     text-align: left;
     margin-bottom: 0;
+    flex-shrink: 0;
   }
 
   .navlinks {
@@ -413,5 +429,10 @@ footer {
   .grid,
   .guides-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-img,
+  .guide-img {
+    height: 230px;
   }
 }
