@@ -19,9 +19,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   background:
-    radial-gradient(circle at top, rgba(99, 102, 241, 0.12), transparent 35%),
-    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.10), transparent 25%),
-    linear-gradient(180deg, #0b1120 0%, #0f172a 45%, #111827 100%);
+    radial-gradient(circle at top, rgba(99, 102, 241, 0.15), transparent 40%),
+    linear-gradient(180deg, #0f172a 0%, #020617 100%);
   color: #f8fafc;
 }
 
@@ -53,7 +52,7 @@ a {
 ========================= */
 .navbar {
   background: linear-gradient(90deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.96));
-  border-bottom: 1px solid rgba(96, 165, 250, 0.25);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.22);
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -118,8 +117,7 @@ a {
    HERO
 ========================= */
 .hero {
-  background:
-    linear-gradient(135deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.96));
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.96));
   padding: 2rem 1.25rem;
   border-radius: 18px;
   margin-bottom: 2rem;
@@ -149,7 +147,7 @@ a {
 ========================= */
 .section-heading {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .section-heading h2 {
@@ -187,7 +185,7 @@ a {
 
 .btn:hover {
   transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 0 16px rgba(99, 102, 241, 0.32);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
 }
 
 /* =========================
@@ -200,11 +198,11 @@ a {
 }
 
 .card {
-  background: linear-gradient(145deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.96));
+  background: #1e293b;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(96, 165, 250, 0.14);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid #334155;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -213,11 +211,8 @@ a {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(129, 140, 248, 0.35);
-  box-shadow:
-    0 12px 22px rgba(0, 0, 0, 0.24),
-    0 0 16px rgba(59, 130, 246, 0.16);
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 .card-img {
@@ -269,22 +264,19 @@ a {
 }
 
 .guide-card {
-  background: linear-gradient(145deg, rgba(30, 41, 59, 0.96), rgba(15, 23, 42, 0.96));
+  background: #1e293b;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(96, 165, 250, 0.14);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid #334155;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .guide-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(129, 140, 248, 0.35);
-  box-shadow:
-    0 12px 22px rgba(0, 0, 0, 0.24),
-    0 0 16px rgba(59, 130, 246, 0.16);
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 .guide-img {
