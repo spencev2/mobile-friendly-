@@ -57,12 +57,29 @@ a {
   z-index: 100;
 }
 
+/* =========================
+   LOGO / BRAND
+========================= */
 .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
   font-size: 1.6rem;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 1rem;
   color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.brand:hover .logo {
+  transform: scale(1.06);
 }
 
 .navlinks {
@@ -329,25 +346,6 @@ textarea {
   min-height: 120px;
 }
 
-.error {
-  display: block;
-  min-height: 18px;
-  margin-top: 6px;
-  color: #f87171;
-  font-size: 0.85rem;
-}
-
-.input-error {
-  border: 1px solid #f87171;
-}
-
-.success-message {
-  margin-bottom: 16px;
-  color: #4ade80;
-  font-weight: bold;
-  min-height: 20px;
-}
-
 /* =========================
    SIMPLE CONTENT SECTIONS
 ========================= */
@@ -404,8 +402,8 @@ textarea {
 }
 
 .leaderboard-row {
-  border-bottom: 1px solid #334155;
-  transition: background-color 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .leaderboard-row:last-child {
@@ -414,6 +412,7 @@ textarea {
 
 .leaderboard-row:hover {
   background: rgba(59, 130, 246, 0.08);
+  transform: scale(1.01);
 }
 
 .leaderboard-rank {
@@ -537,7 +536,7 @@ footer {
   }
 
   .brand {
-    text-align: left;
+    justify-content: flex-start;
     margin-bottom: 0;
     flex-shrink: 0;
   }
